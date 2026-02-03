@@ -5,6 +5,12 @@ export const siteConfig = {
     enterText: 'Clique para entrar',
   },
 
+  // Quote
+  quote: {
+    text: '"Eu te amo não apenas pelo que você é, mas pelo que eu sou quando estou com você."',
+    author: '— Roy Croft',
+  },
+
   // Main content
   title: 'Quer se casar comigo?',
   message:
@@ -16,13 +22,48 @@ export const siteConfig = {
     reject: 'Não aceito',
   },
 
-  // Image alt texts
+  // Image captions and dates
   images: {
-    image1: 'Momento especial do nosso relacionamento',
-    image2: 'Lembrança feliz dos nossos momentos juntos',
-    image3: 'Nosso amor em uma foto',
-    image4: 'Sempre juntos, para sempre',
+    image1: {
+      alt: 'Momento especial do nosso relacionamento',
+      caption: 'Nosso primeiro encontro',
+      date: 'Janeiro 2020',
+    },
+    image2: {
+      alt: 'Lembrança feliz dos nossos momentos juntos',
+      caption: 'Viagem inesquecível',
+      date: 'Verão 2021',
+    },
+    image3: {
+      alt: 'Nosso amor em uma foto',
+      caption: 'Momentos especiais',
+      date: 'Outono 2022',
+    },
+    image4: {
+      alt: 'Sempre juntos, para sempre',
+      caption: 'Para sempre juntos',
+      date: 'Hoje e sempre',
+    },
   },
+
+  // Reasons why
+  reasons: [
+    'Você me faz sorrir todos os dias',
+    'Seu abraço é meu lugar favorito',
+    'Você me entende como ninguém',
+    'Juntos somos invencíveis',
+    'Você é meu melhor amigo',
+    'Cada momento com você é especial',
+  ],
+
+  // Promises
+  promises: [
+    'Sempre te apoiar em seus sonhos',
+    'Fazer você rir todos os dias',
+    'Ser seu parceiro em todas as aventuras',
+    'Amar você mais a cada dia',
+    'Construir uma vida incrível juntos',
+  ],
 
   // Audio settings
   audio: {
