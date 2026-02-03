@@ -9,6 +9,10 @@ body {
   font-family: 'Playwrite NZ Basic Guides', cursive;
 }
 
+.italian-font {
+  font-family: "Italianno", cursive;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

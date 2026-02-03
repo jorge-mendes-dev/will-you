@@ -1,13 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Confetti from 'react-confetti';
-import img_01 from '../assets/01.jpg';
-import img_02 from '../assets/02.jpg';
-import img_03 from '../assets/03.jpg';
-import img_04 from '../assets/04.jpg';
+import img_01 from 'assets/01.jpg';
+import img_02 from 'assets/02.jpg';
+import img_03 from 'assets/03.jpg';
+import img_04 from 'assets/04.jpg';
+import backgroundMusic from 'assets/young-and-beautiful-official-instrumental.mp3';
 
 export default function Content() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [buttonPosition, setButtonPosition] = useState({ top: 0, left: 0 });
+  const [musicStarted, setMusicStarted] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const startMusic = () => {
+    if (audioRef.current && !musicStarted) {
+      audioRef.current.volume = 0.2;
+      audioRef.current.play().catch(error => {
+        console.log('Auto-play was prevented:', error);
+      });
+      setMusicStarted(true);
+    }
+  };
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -35,12 +48,28 @@ export default function Content() {
 
   return (
     <div className="overflow-hidden bg-linear-to-br from-rose-50 via-white to-pink-50 py-32">
+      <audio ref={audioRef} loop>
+        <source src={backgroundMusic} type="audio/mpeg" />
+      </audio>
+      
+      {!musicStarted && (
+        <div 
+          onClick={startMusic}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center cursor-pointer animate-fadeInUp"
+        >
+          <div className="text-center">
+            <h3 className="cursive-font text-white text-4xl sm:text-6xl mb-4">💍</h3>
+            <p className="text-white text-xl sm:text-2xl font-light mb-6">Clique para entrar</p>
+          </div>
+        </div>
+      )}
+      
       {showConfetti && <Confetti />}
       <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:max-w-none lg:min-w-full lg:flex-none lg:gap-y-8">
           <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-            <h2 className="text-4xl cursive-font mb-2 font-semibold tracking-tight text-red-700 sm:text-5xl animate-fadeInUp animate-pulse-slow">Quer se casar comigo?</h2>
-            <p className="mt-8 text-xl/8 text-gray-700 italic animate-fadeInUp animation-delay-200">
+            <h2 className="text-9xl italian-font mb-2 font-semibold tracking-tight text-red-700 sm:text-5xl animate-fadeInUp animate-pulse-slow">Quer se casar comigo?</h2>
+            <p className="mt-8 cursive-font text-xl/8 text-gray-700 italic animate-fadeInUp animation-delay-200">
               Meu amor, muito obrigado por tudo o que vivemos nesses seis anos, pelas coisas boas e pelas difíceis também. Escrevo esta carta para tentar expressar o quanto te amo, o quanto você é importante para mim e o quanto não consigo imaginar minha vida sem você.
             </p>
             <div className="mt-10 flex gap-4 animate-fadeInUp animation-delay-400">
