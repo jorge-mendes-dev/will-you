@@ -46,7 +46,7 @@ export default function Content() {
             <div className="mt-10 flex gap-4">
               <button
                 onClick={handleClick}
-                className="rounded-md bg-red-700 px-4.5 py-3.5 text-sm font-semibold text-white shadow-xs hover:bg-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+                className="rounded-md bg-red-700 px-4.5 py-3.5 text-sm font-semibold text-white shadow-xs hover:bg-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
               >
                 Aceito
               </button>
@@ -57,9 +57,9 @@ export default function Content() {
                   position: buttonPosition.top !== 0 || buttonPosition.left !== 0 ? 'fixed' : 'relative',
                   top: buttonPosition.top !== 0 ? `${buttonPosition.top}px` : 'auto',
                   left: buttonPosition.left !== 0 ? `${buttonPosition.left}px` : 'auto',
-                  transition: 'all 0.3s ease'
+                  transition: 'top 0.3s ease, left 0.3s ease, background-color 0.3s ease'
                 }}
-                className="rounded-md bg-indigo-50 px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-xs hover:bg-indigo-100"
+                className="rounded-md bg-indigo-50 px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-xs hover:bg-indigo-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
               >
                 Não aceito
               </button>
@@ -69,7 +69,7 @@ export default function Content() {
           <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
             <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
               <img
-                alt=""
+                alt="Momento especial do nosso relacionamento"
                 src={img_01}
                 className="aspect-7/5 w-148 max-w-none rounded-2xl bg-gray-50 object-cover max-sm:w-120"
               />
@@ -77,21 +77,21 @@ export default function Content() {
             <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-148 lg:items-start lg:justify-end lg:gap-x-8">
               <div className="order-first flex w-64 flex-none justify-end self-end max-sm:w-40 lg:w-auto">
                 <img
-                  alt=""
+                  alt="Lembrança feliz dos nossos momentos juntos"
                   src={img_02}
                   className="aspect-4/3 w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                 />
               </div>
               <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
                 <img
-                  alt=""
+                  alt="Nosso amor em uma foto"
                   src={img_03}
                   className="aspect-7/5 w-148 max-w-none flex-none rounded-2xl bg-gray-50 object-cover max-sm:w-120"
                 />
               </div>
               <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                 <img
-                  alt=""
+                  alt="Sempre juntos, para sempre"
                   src={img_04}
                   className="aspect-4/3 w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                 />
